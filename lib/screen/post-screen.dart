@@ -23,5 +23,4 @@ class PostsState extends State<PostsScreen> {
       ),
     );
   }
-
 }
