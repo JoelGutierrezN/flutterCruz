@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 
+import 'package:flutter_authentication_with_laravel_sanctum/widgets/nav-drawer.dart';
+
 void main() {
   runApp(MyApp());
 }
@@ -12,7 +14,7 @@ class MyApp extends StatelessWidget {
       theme: ThemeData(
         visualDensity: VisualDensity.adaptivePlatformDensity,
       ),
-      home: MyHomePage(title: 'Flutter Demo Home Page'),
+      home: MyHomePage(title: 'Sanctum authentication'),
     );
   }
 }
@@ -31,9 +33,11 @@ class _MyHomePageState extends State<MyHomePage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+
       appBar: AppBar(
-        title: Text('Primer'),
+        title: Text('Primer Practica'),
       ),
+      drawer: NavDrawer(),
       body: Center(
         child: Text('¡No has Iniciado Sesion!'),
       ),
