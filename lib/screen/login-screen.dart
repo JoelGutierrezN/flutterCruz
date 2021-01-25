@@ -1,7 +1,7 @@
-import 'dart:developer';
-
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_authentication_with_laravel_sanctum/providers/auth.dart';
+import 'package:provider/provider.dart';
 
 class LoginScreen extends StatefulWidget{
 
@@ -17,10 +17,18 @@ class LoginState extends State<LoginScreen> {
   String _email;
   String _password;
 
-  Future submit () async {
-    log(_email);
-    log(_password);
+  submit () {
+    Provider.of<Auth>( context, listen: false ).login(
+      credentials: {
+        'email': _email,
+        'password': _password,
+      }
+    );
+  
+    Navigator.pop(context);
+  
   }
+
 
   @override 
   Widget build(BuildContext context) {
@@ -36,8 +44,9 @@ class LoginState extends State<LoginScreen> {
             child: Column(
               children: [
                 TextFormField(
+                  initialValue: 'joel@outlook.es',
                   decoration: InputDecoration(
-                    labelText: 'Correo',
+                  labelText: 'Correo',
                     hintText: 'tucorreo@direccion.com',
                   ),
                   onSaved: (value) => {
@@ -45,6 +54,7 @@ class LoginState extends State<LoginScreen> {
                   },
                 ),
                 TextFormField(
+                  initialValue: 'contraseña',
                   decoration: InputDecoration(
                     labelText: 'Contraseña',
                   ),
