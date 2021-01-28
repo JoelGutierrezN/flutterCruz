@@ -44,7 +44,7 @@ class LoginState extends State<LoginScreen> {
             child: Column(
               children: [
                 TextFormField(
-                  initialValue: 'joel@outlook.es',
+                  initialValue: 'al221910321@gmail.com',
                   decoration: InputDecoration(
                   labelText: 'Correo',
                     hintText: 'tucorreo@direccion.com',
@@ -54,7 +54,7 @@ class LoginState extends State<LoginScreen> {
                   },
                 ),
                 TextFormField(
-                  initialValue: 'contraseña',
+                  initialValue: 'password',
                   decoration: InputDecoration(
                     labelText: 'Contraseña',
                   ),
