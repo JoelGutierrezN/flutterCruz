@@ -16,7 +16,7 @@ class NavDrawer extends StatelessWidget {
             return ListView(
             children: [
               ListTile(
-                title: Text('Gutierrez Nuñez Joel'),
+                title: Text(auth.user.name),
               ),
               ListTile(
                   title: Text('Publicaciones'),
